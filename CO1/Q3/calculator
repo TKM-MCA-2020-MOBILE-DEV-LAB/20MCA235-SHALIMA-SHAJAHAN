@@ -1,0 +1,194 @@
+CALCULATOR
+
+JAVA CODE :
+
+
+package com.example.calculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+   EditText num1,num2,result;
+   int n1,n2;
+   String s1,s2,s3;
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.activity_main);
+   }
+   public void getNum()
+   {
+       num1 = findViewById(R.id.fn);
+       num2 = findViewById(R.id.sn);
+       result = findViewById(R.id.res);
+       s1 = num1.getText().toString();
+       s2 = num2.getText().toString();
+   }
+   public void sum(View v)
+   {
+       getNum();
+       n1 = Integer.parseInt(s1);
+       n2 = Integer.parseInt(s2);
+       s3 = String.valueOf(n1+n2);
+       result.setText(s3);
+   }
+   public void sub(View v)
+   {
+       getNum();
+       n1 = Integer.parseInt(s1);
+       n2 = Integer.parseInt(s2);
+       s3 = String.valueOf(n1-n2);
+       result.setText(s3);
+   }
+   public void mul(View v)
+   {
+       getNum();
+       n1 = Integer.parseInt(s1);
+       n2 = Integer.parseInt(s2);
+       s3 = String.valueOf(n1*n2);
+       result.setText(s3);
+   }
+   public void div(View v)
+   {
+       getNum();
+       n1 = Integer.parseInt(s1);
+       n2 = Integer.parseInt(s2);
+       s3 = String.valueOf(n1/n2);
+       result.setText(s3);
+   }
+};
+
+
+
+
+
+
+XML 
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   tools:context=".MainActivity">
+
+   <Button
+       android:id="@+id/button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:onClick="sub"
+       android:text="-"
+       android:textSize="18sp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.95"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.499" />
+
+   <Button
+       android:id="@+id/button2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:onClick="mul"
+       android:text="*  "
+       android:textSize="18sp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.95"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.579" />
+
+   <Button
+       android:id="@+id/button3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:onClick="sum"
+       android:text="+"
+       android:textSize="18sp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.95"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.408" />
+
+   <Button
+       android:id="@+id/button4"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:onClick="div"
+       android:text="/  "
+       android:textSize="18sp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.95"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.673" />
+
+   <Button
+       android:id="@+id/button5"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:onClick="res "
+       android:text="= "
+       android:textSize="24sp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.95"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.767" />
+
+   <EditText
+       android:id="@+id/fn"
+       android:layout_width="139dp"
+       android:layout_height="60dp"
+       android:ems="10"
+       android:hint="number  1"
+       android:inputType="number"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.147"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.442" />
+
+   <EditText
+       android:id="@+id/sn"
+       android:layout_width="135dp"
+       android:layout_height="62dp"
+       android:layout_marginTop="108dp"
+       android:ems="10"
+       android:hint="number 2"
+       android:inputType="number"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.144"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.561" />
+
+   <EditText
+       android:id="@+id/res"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:hint="answer"
+       android:inputType="number"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.429"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.196" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

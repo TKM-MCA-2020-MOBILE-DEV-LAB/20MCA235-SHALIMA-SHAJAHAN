@@ -1,4 +1,4 @@
-# 20MCA235-SHALIMA-SHAJAHAN
+
 # MOBILE APPLICATION DEVELOPMENT LAB 
       # Course Level Assessment Questions
                                    Course Outcome 1 (CO1):

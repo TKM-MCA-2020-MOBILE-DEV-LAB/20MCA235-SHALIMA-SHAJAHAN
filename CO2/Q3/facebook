@@ -1,1 +1,75 @@
 
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="309dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/fb_logo" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentLeft="false"
+        android:layout_marginTop="23dp"
+        app:srcCompat="@drawable/asd" />
+
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/imageView7"
+        android:layout_alignBottom="@id/imageView7"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="134dp"
+        android:layout_marginBottom="11dp"
+        android:layout_toRightOf="@id/imageView7"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:inputType="textPersonName"
+        android:text="Shalima"
+        android:textSize="20dp" />
+
+    <CheckBox
+        android:id="@+id/check1"
+        android:layout_width="217dp"
+        android:layout_height="26dp"
+        android:layout_below="@id/imageView7"
+        android:layout_marginTop="63dp"
+        android:layout_marginBottom="56dp"
+        android:text="Log In" />
+
+    <CheckBox
+        android:layout_width="217dp"
+        android:layout_height="26dp"
+        android:layout_alignTop="@+id/check1"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="56dp"
+        android:text="Find your Account" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="72dp"
+        android:background="@color/teal_700"
+        android:text="Create New Account"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>
+
+

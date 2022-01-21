@@ -1,1 +1,72 @@
+xml:
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="400dp"
+        android:layout_height="392dp"
+        app:srcCompat="@drawable/emojii"
+        android:layout_gravity="left|top"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="396dp"
+        android:layout_height="400dp"
+        app:srcCompat="@drawable/asd"
+        android:layout_gravity="left|top"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</FrameLayout>
+
+
+java:
+
+package com.example.framelayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+    public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+        ImageView i1,i2;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            i1=(ImageView) findViewById(R.id.imageView1);
+            i2=(ImageView) findViewById(R.id.imageView2);
+            i1.setOnClickListener(this);
+            i2.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if(v.getId()==R.id.imageView1)
+            {
+                i1.setVisibility(v.GONE);
+                i2.setVisibility(v.VISIBLE);
+            }
+            else
+            {
+
+                i2.setVisibility(v.GONE);
+                i1.setVisibility(v.VISIBLE);
+            }
+        }
+    }
 

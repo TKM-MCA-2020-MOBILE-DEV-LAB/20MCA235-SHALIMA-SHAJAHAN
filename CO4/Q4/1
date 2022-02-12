@@ -1,1 +1,186 @@
+FRAGMENTS
+MainActivity.java
+package com.example.fragmentsq4;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.activity_main);
+   }
+
+   public void fragement1Start(View view){
+       replaceFragement(new Fragment_1());
+   }
+
+   public void fragement2Start(View view){
+       replaceFragement(new Fragment_2());
+   }
+
+   public void replaceFragement(Fragment pragment){
+       FragmentManager fm = getSupportFragmentManager();
+       FragmentTransaction ft = fm.beginTransaction();
+       ft.replace(R.id.fra,pragment);
+       ft.commit();
+   }
+
+}
+
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   tools:context=".MainActivity">
+
+   <Button
+       android:id="@+id/f2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="100dp"
+       android:onClick="fragement2Start"
+       android:text="Fragment 2"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toEndOf="@+id/f1"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/f1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="100dp"
+       android:onClick="fragement1Start"
+       android:text="Fragment 1"
+       app:layout_constraintEnd_toStartOf="@+id/f2"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <FrameLayout
+       android:id="@+id/fra"
+       android:layout_width="409dp"
+       android:layout_height="581dp"
+       tools:layout_editor_absoluteX="2dp"
+       tools:layout_editor_absoluteY="148dp">
+
+   </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Fragment_1.java
+package com.example.fragmentsq4;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class Fragment_1 extends Fragment {
+   @Override
+   public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                            Bundle savedInstanceState) {
+       // Inflate the layout for this fragment
+       return inflater.inflate(R.layout.fragment_1, container, false);
+   }
+}
+
+Fragment_2.java
+package com.example.fragmentsq4;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class Fragment_2 extends Fragment {
+
+   @Override
+   public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                            Bundle savedInstanceState) {
+       // Inflate the layout for this fragment
+       return inflater.inflate(R.layout.fragment_2, container, false);
+   }
+}
+
+Fragment_1.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/frameLayout2"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="#F68DB3"
+   tools:context=".Fragment_1">
+
+
+   <TextView
+       android:id="@+id/textView2"
+       android:layout_width="154dp"
+       android:layout_height="46dp"
+       android:text="Fragment 1"
+       android:textAlignment="center"
+       android:textColor="#DA1C16"
+       android:textSize="24sp"
+       android:textStyle="bold|italic"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.498"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.499" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Fragment_2.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/frameLayout"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="#7DE40F"
+   tools:context=".Fragment_2">
+
+   <!-- TODO: Update blank fragment layout -->
+
+
+   <TextView
+       android:id="@+id/textView"
+       android:layout_width="131dp"
+       android:layout_height="61dp"
+       android:text="Fragment 2"
+       android:textAlignment="center"
+       android:textColor="#121111"
+       android:textSize="24sp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
